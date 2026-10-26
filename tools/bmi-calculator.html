@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator — QuickToolBox</title>
+<meta name="description" content="Calculate your Body Mass Index (BMI) from height and weight, in metric or imperial units.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/bmi-calculator.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="BMI Calculator — QuickToolBox">
+<meta property="og:description" content="Calculate your Body Mass Index (BMI) from height and weight, in metric or imperial units.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/bmi-calculator.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BMI Calculator — QuickToolBox">
+<meta name="twitter:description" content="Calculate your Body Mass Index (BMI) from height and weight, in metric or imperial units.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BMI Calculator",
+  "url": "https://quicktoolbox292da.onrender.com/tools/bmi-calculator.html",
+  "description": "Free BMI calculator. Enter your height and weight in metric (cm/kg) or imperial (ft-in/lb) units to get your BMI and weight category instantly.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "BMI Calculator",
+      "item": "https://quicktoolbox292da.onrender.com/tools/bmi-calculator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / BMI Calculator</p>
+    <h1>BMI Calculator</h1>
+    <p class="lead">Calculate your Body Mass Index (BMI) from height and weight, in metric or imperial units.</p>
+
+    <div class="panel">
+      <div class="field-row">
+        <label class="field-label" for="units">Units</label>
+        <select id="units">
+          <option value="metric">Metric (cm, kg)</option>
+          <option value="imperial">Imperial (ft/in, lb)</option>
+        </select>
+      </div>
+
+      <div id="metric-fields" class="two-col field-row">
+        <div>
+          <label class="field-label" for="height-cm">Height (cm)</label>
+          <input type="number" id="height-cm" placeholder="170">
+        </div>
+        <div>
+          <label class="field-label" for="weight-kg">Weight (kg)</label>
+          <input type="number" id="weight-kg" placeholder="65">
+        </div>
+      </div>
+
+      <div id="imperial-fields" class="two-col field-row hidden">
+        <div>
+          <label class="field-label" for="height-ft">Height</label>
+          <div class="two-col">
+            <input type="number" id="height-ft" placeholder="ft">
+            <input type="number" id="height-in" placeholder="in">
+          </div>
+        </div>
+        <div>
+          <label class="field-label" for="weight-lb">Weight (lb)</label>
+          <input type="number" id="weight-lb" placeholder="145">
+        </div>
+      </div>
+
+      <button class="btn" id="calc-btn">Calculate BMI</button>
+
+      <div class="result-box hidden" id="result">
+        <div class="stats-row">
+          <div class="stat"><span class="num" id="bmi-value">—</span><span class="label">BMI</span></div>
+          <div class="stat"><span class="num" id="bmi-category">—</span><span class="label">Category</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The BMI Calculator estimates your Body Mass Index from height and weight, in metric or imperial units. BMI is weight in kilograms divided by height in metres squared.</p>
+    <h2>How to use it</h2>
+    <ol><li>Choose metric (cm, kg) or imperial (feet/inches, pounds).</li><li>Enter your height and weight.</li><li>Click Calculate BMI and read the result.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>Commonly used adult ranges are under 18.5 (underweight), 18.5–24.9 (normal), 25–29.9 (overweight) and 30 or above (obese). Some health bodies use lower cut-offs for South Asian adults. BMI does not distinguish muscle from fat and is not suitable for children, so treat it as a rough screening number.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>Is BMI a diagnosis?</h3><p>No. It is a simple screening measure. Talk to a doctor about your health.</p><h3>Is my data saved?</h3><p>No. It is calculated in your browser.</p><h3>Does it work for children?</h3><p>Children and teenagers are assessed differently, so adult ranges do not apply.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const unitsEl = document.getElementById('units');
+const metricFields = document.getElementById('metric-fields');
+const imperialFields = document.getElementById('imperial-fields');
+const calcBtn = document.getElementById('calc-btn');
+const result = document.getElementById('result');
+const bmiValueEl = document.getElementById('bmi-value');
+const bmiCategoryEl = document.getElementById('bmi-category');
+
+unitsEl.addEventListener('change', () => {
+  const metric = unitsEl.value === 'metric';
+  metricFields.classList.toggle('hidden', !metric);
+  imperialFields.classList.toggle('hidden', metric);
+});
+
+function categoryFor(bmi) {
+  if (bmi < 18.5) return 'Underweight';
+  if (bmi < 25) return 'Normal weight';
+  if (bmi < 30) return 'Overweight';
+  return 'Obese';
+}
+
+calcBtn.addEventListener('click', () => {
+  let bmi;
+  if (unitsEl.value === 'metric') {
+    const cm = parseFloat(document.getElementById('height-cm').value);
+    const kg = parseFloat(document.getElementById('weight-kg').value);
+    if (!cm || !kg) return;
+    const m = cm / 100;
+    bmi = kg / (m * m);
+  } else {
+    const ft = parseFloat(document.getElementById('height-ft').value) || 0;
+    const inch = parseFloat(document.getElementById('height-in').value) || 0;
+    const lb = parseFloat(document.getElementById('weight-lb').value);
+    const totalInches = ft * 12 + inch;
+    if (!totalInches || !lb) return;
+    bmi = (lb / (totalInches * totalInches)) * 703;
+  }
+  bmiValueEl.textContent = bmi.toFixed(1);
+  bmiCategoryEl.textContent = categoryFor(bmi);
+  result.classList.remove('hidden');
+});
+
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>

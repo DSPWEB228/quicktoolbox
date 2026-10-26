@@ -1,0 +1,21 @@
+{
+  "name": "QuickToolBox",
+  "short_name": "QuickToolBox",
+  "description": "Free everyday web tools \u2014 compress images, convert PDFs, count words, generate QR codes and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#157A73",
+  "icons": [
+    {
+      "src": "/assets/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

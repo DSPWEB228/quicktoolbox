@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — QuickToolBox</title>
+<meta name="description" content="Turn any link or text into a downloadable QR code, free and instant.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/qr-generator.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="QR Code Generator — QuickToolBox">
+<meta property="og:description" content="Free QR code generator. Turn any link, text or message into a downloadable QR code instantly — no sign-up, no watermark.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/qr-generator.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Code Generator — QuickToolBox">
+<meta name="twitter:description" content="Free QR code generator. Turn any link, text or message into a downloadable QR code instantly — no sign-up, no watermark.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "QR Code Generator",
+  "url": "https://quicktoolbox292da.onrender.com/tools/qr-generator.html",
+  "description": "Free QR code generator. Turn any link, text or message into a downloadable QR code instantly \u2014 no sign-up, no watermark.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "QR Code Generator",
+      "item": "https://quicktoolbox292da.onrender.com/tools/qr-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / QR Code Generator</p>
+    <h1>QR Code Generator</h1>
+    <p class="lead">Enter a link or any text. Your QR code appears instantly and is generated on your device.</p>
+
+    <div class="panel">
+      <div class="field-row">
+        <label class="field-label" for="qr-input">Link or text</label>
+        <input type="text" id="qr-input" placeholder="https://example.com">
+      </div>
+      <button class="btn" id="qr-generate">Generate QR code</button>
+
+      <div class="result-box hidden" id="qr-result">
+        <div id="qr-canvas" style="margin-bottom:16px;"></div>
+        <button class="btn secondary" id="qr-download">Download PNG</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The QR Code Generator turns a web link or any short text into a QR code you can download and print. The code is created on your device.</p>
+    <h2>How to use it</h2>
+    <ol><li>Type or paste a link or text into the box.</li><li>Click Generate QR code.</li><li>Download the image.</li><li>Test it by scanning with your phone before you print or share it.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>Shorter text produces a simpler, easier-to-scan code. Keep good contrast (dark code on a light background) and leave a clear margin around it. When printing, make it large enough to scan from the intended distance.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>Does the QR code expire?</h3><p>No. The code simply contains your text or link, so it works as long as the link does.</p><h3>Is my text sent anywhere?</h3><p>No. The code is generated in your browser.</p><h3>Can I use it commercially?</h3><p>Yes, the generated image is yours to use.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const genBtn = document.getElementById('qr-generate');
+const input = document.getElementById('qr-input');
+const resultBox = document.getElementById('qr-result');
+const canvasHolder = document.getElementById('qr-canvas');
+const downloadBtn = document.getElementById('qr-download');
+let qr;
+
+genBtn.addEventListener('click', () => {
+  const value = input.value.trim();
+  if (!value) { input.focus(); return; }
+
+  canvasHolder.innerHTML = '';
+  qr = new QRCode(canvasHolder, {
+    text: value,
+    width: 220,
+    height: 220,
+    colorDark: '#161A1E',
+    colorLight: '#ffffff'
+  });
+  resultBox.classList.remove('hidden');
+});
+
+downloadBtn.addEventListener('click', () => {
+  const img = canvasHolder.querySelector('img') || canvasHolder.querySelector('canvas');
+  const link = document.createElement('a');
+  link.download = 'qr-code.png';
+  link.href = img.tagName === 'CANVAS' ? img.toDataURL('image/png') : img.src;
+  link.click();
+});
+
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') genBtn.click();
+});
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>

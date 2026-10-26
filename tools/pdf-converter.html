@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF ⇄ Word Converter — QuickToolBox</title>
+<meta name="description" content="Convert PDF files to Word, or Word files to PDF — runs entirely in your browser.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/pdf-converter.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="PDF ⇄ Word Converter — QuickToolBox">
+<meta property="og:description" content="Free PDF to Word and Word to PDF converter that runs entirely in your browser. Convert documents instantly with no upload and no sign-up.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/pdf-converter.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF ⇄ Word Converter — QuickToolBox">
+<meta name="twitter:description" content="Free PDF to Word and Word to PDF converter that runs entirely in your browser. Convert documents instantly with no upload and no sign-up.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PDF \u21c4 Word Converter",
+  "url": "https://quicktoolbox292da.onrender.com/tools/pdf-converter.html",
+  "description": "Free PDF to Word and Word to PDF converter that runs entirely in your browser. Convert documents instantly with no upload and no sign-up.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PDF \u21c4 Word Converter",
+      "item": "https://quicktoolbox292da.onrender.com/tools/pdf-converter.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / PDF ⇄ Word</p>
+    <h1>PDF ⇄ Word Converter</h1>
+    <p class="lead">Runs entirely in your browser — no upload, no server. Note: this pulls the text content across and rebuilds a plain document; complex layouts, images and precise formatting won't carry over.</p>
+
+    <div class="panel">
+      <div class="field-row">
+        <label class="field-label" for="direction">Direction</label>
+        <select id="direction">
+          <option value="pdf-to-word">PDF → Word</option>
+          <option value="word-to-pdf">Word (.docx) → PDF</option>
+        </select>
+      </div>
+
+      <div class="dropzone" id="dropzone">
+        Click to choose a file, or drag one here
+        <input type="file" id="file-input" style="display:none;">
+      </div>
+
+      <div id="file-name" style="margin-top:12px; font-size:0.9rem; color:var(--steel);"></div>
+
+      <button class="btn" id="convert-btn" style="margin-top:20px;" disabled>Convert</button>
+
+      <div class="result-box hidden" id="result-box"></div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The PDF ⇄ Word Converter pulls text out of a PDF into a Word document, or turns a Word document into a PDF. It runs in your browser and is meant for text content.</p>
+    <h2>How to use it</h2>
+    <ol><li>Choose the direction: PDF to Word, or Word to PDF.</li><li>Select your file.</li><li>Start the conversion.</li><li>Download the result and review it.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>PDF to Word downloads a .doc file that Word opens; Word to PDF expects a .docx file. Only text and paragraph breaks carry over. Complex layouts, tables, images and exact fonts will not be preserved, so always review the converted file. For layout-critical documents, use the original software.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>Will the formatting be identical?</h3><p>No. The tool rebuilds a plain document from the text, so complex formatting is lost.</p><h3>Are my files uploaded?</h3><p>No. Conversion happens on your device.</p><h3>Does it work on scanned PDFs?</h3><p>Scanned PDFs contain images rather than text, so there is no text to extract.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('file-input');
+const fileNameEl = document.getElementById('file-name');
+const convertBtn = document.getElementById('convert-btn');
+const resultBox = document.getElementById('result-box');
+const directionEl = document.getElementById('direction');
+let selectedFile = null;
+
+fileInput.addEventListener('click', (e) => e.stopPropagation());
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag-over'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+dropzone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropzone.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) selectFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) selectFile(fileInput.files[0]);
+});
+
+function selectFile(file) {
+  selectedFile = file;
+  fileNameEl.textContent = `Selected: ${file.name}`;
+  convertBtn.disabled = false;
+  resultBox.classList.add('hidden');
+}
+
+convertBtn.addEventListener('click', async () => {
+  if (!selectedFile) return;
+  convertBtn.disabled = true;
+  convertBtn.textContent = 'Converting…';
+  resultBox.classList.add('hidden');
+
+  try {
+    if (directionEl.value === 'pdf-to-word') {
+      await convertPdfToWord(selectedFile);
+    } else {
+      await convertWordToPdf(selectedFile);
+    }
+  } catch (err) {
+    console.error(err);
+    resultBox.innerHTML = `Couldn't convert that file. Make sure you picked a ${directionEl.value === 'pdf-to-word' ? 'PDF' : '.docx Word'} file and try again.`;
+    resultBox.classList.remove('hidden');
+  } finally {
+    convertBtn.disabled = false;
+    convertBtn.textContent = 'Convert';
+  }
+});
+
+async function convertPdfToWord(file) {
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+  let htmlParagraphs = '';
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const pageText = content.items.map(item => item.str).join(' ');
+    htmlParagraphs += `<p>${escapeHtml(pageText)}</p>`;
+  }
+
+  // Wrap as a Word-compatible HTML document (.doc). Word opens this
+  // natively; it's not a true .docx but preserves text content and
+  // paragraph breaks without needing any server-side processing.
+  const wordHtml = `
+    <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+    <head><meta charset="utf-8"><title>Converted Document</title></head>
+    <body>${htmlParagraphs}</body>
+    </html>`;
+
+  const blob = new Blob(['\ufeff', wordHtml], { type: 'application/msword' });
+  offerDownload(blob, file.name.replace(/\.pdf$/i, '') + '.doc');
+}
+
+async function convertWordToPdf(file) {
+  const arrayBuffer = await file.arrayBuffer();
+  const { value: text } = await mammoth.extractRawText({ arrayBuffer });
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+  const margin = 48;
+  const pageWidth = doc.internal.pageSize.getWidth() - margin * 2;
+  const lineHeight = 16;
+  let y = margin;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+
+  const paragraphs = text.split(/\n+/).filter(p => p.trim().length);
+  paragraphs.forEach(paragraph => {
+    const lines = doc.splitTextToSize(paragraph, pageWidth);
+    lines.forEach(line => {
+      if (y > doc.internal.pageSize.getHeight() - margin) {
+        doc.addPage();
+        y = margin;
+      }
+      doc.text(line, margin, y);
+      y += lineHeight;
+    });
+    y += lineHeight * 0.5;
+  });
+
+  const blob = doc.output('blob');
+  offerDownload(blob, file.name.replace(/\.docx$/i, '') + '.pdf');
+}
+
+function offerDownload(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  resultBox.innerHTML = `<a class="btn" href="${url}" download="${filename}">Download ${filename}</a>`;
+  resultBox.classList.remove('hidden');
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>

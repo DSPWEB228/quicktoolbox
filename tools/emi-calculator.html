@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator — QuickToolBox</title>
+<meta name="description" content="Calculate your monthly loan EMI, total interest and total payment for any loan amount, interest rate and tenure.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/emi-calculator.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="EMI Calculator — QuickToolBox">
+<meta property="og:description" content="Calculate your monthly loan EMI, total interest and total payment for any loan amount, interest rate and tenure.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/emi-calculator.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMI Calculator — QuickToolBox">
+<meta name="twitter:description" content="Calculate your monthly loan EMI, total interest and total payment for any loan amount, interest rate and tenure.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EMI Calculator",
+  "url": "https://quicktoolbox292da.onrender.com/tools/emi-calculator.html",
+  "description": "Free EMI calculator for home, car and personal loans. Enter loan amount, annual interest rate and tenure to get your monthly EMI, total interest payable and total repayment.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "EMI Calculator",
+      "item": "https://quicktoolbox292da.onrender.com/tools/emi-calculator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / EMI Calculator</p>
+    <h1>EMI Calculator</h1>
+    <p class="lead">Calculate your monthly loan EMI, total interest and total payment for any loan amount, interest rate and tenure.</p>
+
+    <div class="panel">
+      <div class="field-row">
+        <label class="field-label" for="principal">Loan amount</label>
+        <input type="number" id="principal" placeholder="500000">
+      </div>
+      <div class="two-col field-row">
+        <div>
+          <label class="field-label" for="rate">Interest rate (% per year)</label>
+          <input type="number" id="rate" step="0.01" placeholder="9.5">
+        </div>
+        <div>
+          <label class="field-label" for="tenure">Tenure</label>
+          <div class="two-col">
+            <input type="number" id="tenure-value" placeholder="5">
+            <select id="tenure-unit">
+              <option value="years">Years</option>
+              <option value="months">Months</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box hidden" id="result">
+        <div class="stats-row">
+          <div class="stat"><span class="num" id="emi-value">—</span><span class="label">Monthly EMI</span></div>
+          <div class="stat"><span class="num" id="total-interest">—</span><span class="label">Total interest</span></div>
+          <div class="stat"><span class="num" id="total-payment">—</span><span class="label">Total payment</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The EMI Calculator works out the monthly instalment, total interest and total repayment for a loan from the amount, annual interest rate and tenure.</p>
+    <h2>How to use it</h2>
+    <ol><li>Enter the loan amount.</li><li>Enter the annual interest rate.</li><li>Enter the tenure in months or years.</li><li>Read your monthly EMI, total interest and total payment.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the principal, r is the monthly interest rate and n is the number of months. A longer tenure lowers the EMI but increases the total interest. Your lender's figure may differ slightly because of processing fees, rounding and rate changes.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>Is this exact for my loan?</h3><p>It is an estimate. Fees, insurance and floating rates can change the real amount.</p><h3>Does a longer tenure save money?</h3><p>It lowers the monthly payment but usually raises the total interest paid.</p><h3>Is my data stored?</h3><p>No. Everything runs in your browser.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const principalEl = document.getElementById('principal');
+const rateEl = document.getElementById('rate');
+const tenureValueEl = document.getElementById('tenure-value');
+const tenureUnitEl = document.getElementById('tenure-unit');
+const result = document.getElementById('result');
+const emiValueEl = document.getElementById('emi-value');
+const totalInterestEl = document.getElementById('total-interest');
+const totalPaymentEl = document.getElementById('total-payment');
+
+function formatMoney(n) {
+  return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+}
+
+function calc() {
+  const P = parseFloat(principalEl.value);
+  const annualRate = parseFloat(rateEl.value);
+  const tenureRaw = parseFloat(tenureValueEl.value);
+  if (!P || !annualRate || !tenureRaw) { result.classList.add('hidden'); return; }
+
+  const n = tenureUnitEl.value === 'years' ? tenureRaw * 12 : tenureRaw;
+  const r = annualRate / 12 / 100;
+
+  let emi;
+  if (r === 0) {
+    emi = P / n;
+  } else {
+    const factor = Math.pow(1 + r, n);
+    emi = (P * r * factor) / (factor - 1);
+  }
+
+  const totalPayment = emi * n;
+  const totalInterest = totalPayment - P;
+
+  emiValueEl.textContent = formatMoney(emi);
+  totalInterestEl.textContent = formatMoney(totalInterest);
+  totalPaymentEl.textContent = formatMoney(totalPayment);
+  result.classList.remove('hidden');
+}
+
+[principalEl, rateEl, tenureValueEl, tenureUnitEl].forEach(el => el.addEventListener('input', calc));
+
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>

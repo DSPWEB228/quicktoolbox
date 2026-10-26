@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST Calculator — QuickToolBox</title>
+<meta name="description" content="Add or remove GST from an amount and see the CGST/SGST split for common Indian GST rates.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/gst-calculator.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="GST Calculator — QuickToolBox">
+<meta property="og:description" content="Add or remove GST from an amount and see the CGST/SGST split for common Indian GST rates.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/gst-calculator.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GST Calculator — QuickToolBox">
+<meta name="twitter:description" content="Add or remove GST from an amount and see the CGST/SGST split for common Indian GST rates.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GST Calculator",
+  "url": "https://quicktoolbox292da.onrender.com/tools/gst-calculator.html",
+  "description": "Free GST calculator for India. Add GST to a base amount or remove GST from an inclusive amount, with the current slabs (5%, 18%, 40%) and a CGST/SGST breakdown.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "GST Calculator",
+      "item": "https://quicktoolbox292da.onrender.com/tools/gst-calculator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / GST Calculator</p>
+    <h1>GST Calculator</h1>
+    <p class="lead">Add or remove GST from an amount and see the CGST/SGST split for common Indian GST rates.</p>
+
+    <div class="panel">
+      <div class="field-row">
+        <label class="field-label" for="mode">Calculation type</label>
+        <select id="mode">
+          <option value="add">Add GST (amount is exclusive of GST)</option>
+          <option value="remove">Remove GST (amount is inclusive of GST)</option>
+        </select>
+      </div>
+
+      <div class="two-col field-row">
+        <div>
+          <label class="field-label" for="amount">Amount (₹)</label>
+          <input type="number" id="amount" placeholder="1000">
+        </div>
+        <div>
+          <label class="field-label" for="rate">GST rate</label>
+          <select id="rate">
+            <option value="5">5%</option>
+            <option value="18" selected>18%</option>
+            <option value="40">40%</option>
+            <option value="custom">Custom</option>
+          </select>
+          <input type="number" id="custom-rate" placeholder="Custom %" style="margin-top:8px;" class="hidden">
+        </div>
+      </div>
+
+      <div class="result-box hidden" id="result">
+        <div class="stats-row">
+          <div class="stat"><span class="num" id="net-amount">—</span><span class="label">Net amount</span></div>
+          <div class="stat"><span class="num" id="gst-amount">—</span><span class="label">Total GST</span></div>
+          <div class="stat"><span class="num" id="gross-amount">—</span><span class="label">Gross amount</span></div>
+        </div>
+        <div class="stats-row" style="margin-top:12px;">
+          <div class="stat"><span class="num" id="cgst-amount">—</span><span class="label">CGST</span></div>
+          <div class="stat"><span class="num" id="sgst-amount">—</span><span class="label">SGST</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The GST Calculator adds GST to a pre-tax amount, or removes GST from a GST-inclusive amount, and shows the CGST and SGST split.</p>
+    <h2>How to use it</h2>
+    <ol><li>Choose Add GST or Remove GST.</li><li>Enter the amount in rupees.</li><li>Pick a GST rate, or enter a custom rate.</li><li>Read the net amount, total GST, gross amount and CGST/SGST split.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>Since 22 September 2025 India's main GST slabs are 5% and 18%, with 40% for certain luxury and sin goods, and 0% for exempt items. The old 12% and 28% slabs no longer apply to most goods, though you can enter any rate using Custom. Always confirm the correct rate for your product or service with the official GST rate schedule or a tax professional.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>What are CGST and SGST?</h3><p>For sales within a state, GST is split equally between the central (CGST) and state (SGST) governments. Sales between states use IGST instead.</p><h3>How do I remove GST from a price?</h3><p>Choose Remove GST and enter the GST-inclusive price.</p><h3>Is this tax advice?</h3><p>No, it is a calculator for estimates.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const modeEl = document.getElementById('mode');
+const amountEl = document.getElementById('amount');
+const rateEl = document.getElementById('rate');
+const customRateEl = document.getElementById('custom-rate');
+const result = document.getElementById('result');
+const netEl = document.getElementById('net-amount');
+const gstEl = document.getElementById('gst-amount');
+const grossEl = document.getElementById('gross-amount');
+const cgstEl = document.getElementById('cgst-amount');
+const sgstEl = document.getElementById('sgst-amount');
+
+rateEl.addEventListener('change', () => {
+  customRateEl.classList.toggle('hidden', rateEl.value !== 'custom');
+  calc();
+});
+
+function formatMoney(n) {
+  return '₹' + n.toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+function calc() {
+  const amount = parseFloat(amountEl.value);
+  const rate = rateEl.value === 'custom' ? parseFloat(customRateEl.value) : parseFloat(rateEl.value);
+  if (!amount || !rate) { result.classList.add('hidden'); return; }
+
+  let net, gst, gross;
+  if (modeEl.value === 'add') {
+    net = amount;
+    gst = net * (rate / 100);
+    gross = net + gst;
+  } else {
+    gross = amount;
+    net = gross / (1 + rate / 100);
+    gst = gross - net;
+  }
+
+  netEl.textContent = formatMoney(net);
+  gstEl.textContent = formatMoney(gst);
+  grossEl.textContent = formatMoney(gross);
+  cgstEl.textContent = formatMoney(gst / 2);
+  sgstEl.textContent = formatMoney(gst / 2);
+  result.classList.remove('hidden');
+}
+
+[modeEl, amountEl, rateEl, customRateEl].forEach(el => el.addEventListener('input', calc));
+
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>

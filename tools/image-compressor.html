@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor — QuickToolBox</title>
+<meta name="description" content="Shrink JPG and PNG file size in your browser — no upload needed.">
+<link rel="canonical" href="https://quicktoolbox292da.onrender.com/tools/image-compressor.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#157A73">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickToolBox">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Image Compressor — QuickToolBox">
+<meta property="og:description" content="Free online image compressor. Reduce JPG and PNG file size instantly in your browser with no upload, no sign-up and no quality loss you can notice.">
+<meta property="og:url" content="https://quicktoolbox292da.onrender.com/tools/image-compressor.html">
+<meta property="og:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Compressor — QuickToolBox">
+<meta name="twitter:description" content="Free online image compressor. Reduce JPG and PNG file size instantly in your browser with no upload, no sign-up and no quality loss you can notice.">
+<meta name="twitter:image" content="https://quicktoolbox292da.onrender.com/assets/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="/js/consent.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5271137719829070"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Compressor",
+  "url": "https://quicktoolbox292da.onrender.com/tools/image-compressor.html",
+  "description": "Free online image compressor. Reduce JPG and PNG file size instantly in your browser with no upload, no sign-up and no quality loss you can notice.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (Web Browser)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "image": "https://quicktoolbox292da.onrender.com/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://quicktoolbox292da.onrender.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Image Compressor",
+      "item": "https://quicktoolbox292da.onrender.com/tools/image-compressor.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/icons/logo.png" alt="" width="28" height="28">Quick<span>ToolBox</span></a>
+    <nav class="site-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="top_banner"></div>
+</div>
+
+
+<main class="tool-page">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">QuickToolBox</a> / Image Compressor</p>
+    <h1>Image Compressor</h1>
+    <p class="lead">Your image is compressed right in the browser — it's never uploaded to a server.</p>
+
+    <div class="panel">
+      <div class="dropzone" id="dropzone">
+        Click to choose an image, or drag one here (JPG or PNG)
+        <input type="file" id="file-input" accept="image/jpeg,image/png" style="display:none;">
+      </div>
+
+      <div class="field-row" style="margin-top:24px;">
+        <label class="field-label" for="quality">Quality: <span id="quality-value">70</span>%</label>
+        <input type="range" id="quality" min="10" max="100" value="70" style="width:100%;">
+      </div>
+
+      <div class="result-box hidden" id="result">
+        <div class="stats-row">
+          <div class="stat"><span class="num" id="original-size">—</span><span class="label">Original</span></div>
+          <div class="stat"><span class="num" id="compressed-size">—</span><span class="label">Compressed</span></div>
+          <div class="stat"><span class="num" id="saved-pct">—</span><span class="label">Saved</span></div>
+        </div>
+        <div style="margin-top:20px;">
+          <canvas id="preview-canvas"></canvas>
+        </div>
+        <a class="btn" id="download-link" style="margin-top:16px;" download="compressed.jpg">Download compressed image</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrap content-section">
+    <h2>About this tool</h2>
+    <p>The Image Compressor reduces the file size of JPG and PNG images so they upload faster, fit email limits and take less storage. Compression happens in your browser, so your photo is never sent anywhere.</p>
+    <h2>How to use it</h2>
+    <ol><li>Click the upload area (or drag an image onto it) and choose a JPG or PNG file.</li><li>Adjust the quality slider. Lower quality gives a smaller file; around 60–80% is usually a good balance for photos.</li><li>Compare the original size with the compressed size shown in the results.</li><li>Click the download button to save the compressed image.</li></ol>
+    <h2>Tips and limits</h2>
+    <p>Photos with lots of detail usually shrink the most. Images that were already compressed, or simple graphics, may shrink only a little. If the picture looks too soft or blocky, raise the quality and try again.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>Is my image uploaded to a server?</h3><p>No. The image is processed locally in your browser and is not uploaded.</p><h3>Will compression reduce quality?</h3><p>Yes, lossy compression trades some detail for a smaller file. Use the quality slider to choose how much.</p><h3>Is there a file limit?</h3><p>There is no fixed limit on our side, but very large images depend on your device's memory.</p>
+  </div>
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--rectangle" data-ad-slot="in_content"></div>
+</div>
+
+</main>
+
+
+<div class="ad-slot-wrap">
+  <span class="ad-slot__label">Advertisement</span>
+  <div class="ad-slot ad-slot--leaderboard" data-ad-slot="bottom_banner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 QuickToolBox</span>
+    <span><a href="/privacy-policy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('file-input');
+const qualitySlider = document.getElementById('quality');
+const qualityValue = document.getElementById('quality-value');
+const result = document.getElementById('result');
+const canvas = document.getElementById('preview-canvas');
+const ctx = canvas.getContext('2d');
+const originalSizeEl = document.getElementById('original-size');
+const compressedSizeEl = document.getElementById('compressed-size');
+const savedPctEl = document.getElementById('saved-pct');
+const downloadLink = document.getElementById('download-link');
+
+let currentImage = null;
+let originalFileSize = 0;
+
+fileInput.addEventListener('click', (e) => e.stopPropagation());
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag-over'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+dropzone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropzone.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) handleFile(fileInput.files[0]);
+});
+
+function handleFile(file) {
+  originalFileSize = file.size;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      currentImage = img;
+      canvas.width = img.width;
+      canvas.height = img.height;
+      compress();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+}
+
+function compress() {
+  if (!currentImage) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(currentImage, 0, 0);
+
+  const quality = parseInt(qualitySlider.value, 10) / 100;
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    originalSizeEl.textContent = formatBytes(originalFileSize);
+    compressedSizeEl.textContent = formatBytes(blob.size);
+    const saved = Math.max(0, Math.round((1 - blob.size / originalFileSize) * 100));
+    savedPctEl.textContent = saved + '%';
+    result.classList.remove('hidden');
+  }, 'image/jpeg', quality);
+}
+
+qualitySlider.addEventListener('input', () => {
+  qualityValue.textContent = qualitySlider.value;
+  compress();
+});
+</script>
+
+<script type="module" src="/js/ads.js"></script>
+</body>
+</html>
