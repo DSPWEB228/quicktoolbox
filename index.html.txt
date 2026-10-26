@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Ads Pheonix is a performance advertising platform connecting advertisers with quality publishers and scalable digital traffic."
+    >
+
+    <meta
+        name="keywords"
+        content="Ads Pheonix, advertising network, affiliate marketing, performance marketing, publisher network, advertiser platform"
+    >
+
+    <meta name="author" content="Ads Pheonix">
+
+    <title>Ads Pheonix | Performance Advertising Network</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 76px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #b9c3d4;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 20px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .btn-outline {
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 35px rgba(79, 70, 229, 0.38);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(124, 58, 237, 0.22),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 15% 70%,
+                    rgba(6, 182, 212, 0.12),
+                    transparent 30%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(139, 92, 246, 0.12);
+            right: -170px;
+            top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 90px 24px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border-radius: 30px;
+            background: rgba(124, 58, 237, 0.10);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            color: #b9a5ff;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            max-width: 700px;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(90deg, #a78bfa, #22d3ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text {
+            max-width: 620px;
+            margin-top: 25px;
+            color: #9eabbe;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 34px;
+        }
+
+        .hero-buttons .btn {
+            min-height: 50px;
+            padding: 0 25px;
+        }
+
+        .hero-note {
+            margin-top: 22px;
+            color: #69778c;
+            font-size: 12px;
+        }
+
+        /* Dashboard visual */
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .dashboard-card {
+            position: relative;
+            padding: 22px;
+            border-radius: 22px;
+            background: rgba(15, 27, 46, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.35),
+                0 0 80px rgba(124, 58, 237, 0.10);
+        }
+
+        .dashboard-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+        }
+
+        .dashboard-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .live {
+            color: #4ade80;
+            font-size: 11px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+        }
+
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .mini-stat {
+            padding: 17px;
+            border-radius: 13px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .mini-stat-label {
+            color: #78869a;
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        .mini-stat-value {
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .chart {
+            margin-top: 15px;
+            height: 180px;
+            border-radius: 14px;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0.04) 1px,
+                    transparent 1px
+                );
+            background-size: 100% 45px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 28px;
+            height: 110px;
+        }
+
+        .chart-line svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-line path {
+            fill: none;
+            stroke: #8b5cf6;
+            stroke-width: 3;
+        }
+
+        .chart-fill {
+            fill: rgba(139, 92, 246, 0.08);
+            stroke: none !important;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: #091525;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #9aa8bd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            color: #78869a;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 105px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-label {
+            color: #8b5cf6;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            margin-top: 16px;
+            color: #7f8da1;
+            font-size: 15px;
+        }
+
+        /* =========================
+           TWO SIDES
+        ========================= */
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .audience-card {
+            padding: 35px;
+            border-radius: 20px;
+            background: #0b1829;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: 0.3s;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .audience-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            margin-bottom: 22px;
+            background: rgba(124, 58, 237, 0.12);
+        }
+
+        .audience-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .audience-card p {
+            color: #8190a4;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .audience-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .audience-list li {
+            color: #aeb9c9;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .audience-list li::before {
+            content: "✓";
+            color: #4ade80;
+            margin-right: 10px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature-card {
+            padding: 28px;
+            background: #0b1829;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 17px;
+        }
+
+        .feature-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(6, 182, 212, 0.10);
+            margin-bottom: 18px;
+            font-size: 19px;
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #78869a;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            position: relative;
+            padding: 30px;
+            background: #0b1829;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .step-number {
+            font-size: 12px;
+            color: #8b5cf6;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .step p {
+            color: #7d8b9f;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            max-width: 1152px;
+            margin: 0 auto 100px;
+            padding: 70px 35px;
+            text-align: center;
+            border-radius: 25px;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(124, 58, 237, 0.28),
+                    transparent 55%
+                ),
+                #0b1829;
+            border: 1px solid rgba(139, 92, 246, 0.16);
+        }
+
+        .cta h2 {
+            font-size: clamp(30px, 4vw, 45px);
+            line-height: 1.15;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 16px auto 28px;
+            color: #8190a4;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            background: #050d18;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 24px 25px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand p {
+            max-width: 360px;
+            color: #69778c;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #69778c;
+            font-size: 12px;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            color: #566276;
+            font-size: 11px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav {
+                padding: 0 16px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .nav-actions .btn-outline {
+                display: none;
+            }
+
+            .hero-container {
+                padding: 70px 18px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-text {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .dashboard-card {
+                padding: 15px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px 18px;
+            }
+
+            .stat-number {
+                font-size: 25px;
+            }
+
+            .section {
+                padding: 75px 18px;
+            }
+
+            .audience-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-card {
+                padding: 27px;
+            }
+
+            .cta {
+                margin: 0 18px 70px;
+                padding: 50px 20px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                Ads <span>Pheonix</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#advertisers">Advertisers</a>
+                <a href="#publishers">Publishers</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+
+            <div class="nav-actions">
+
+                <a
+                    href="Advertiser/Login/index.html"
+                    class="btn btn-outline"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="Advertiser/Register/index.html"
+                    class="btn btn-primary"
+                >
+                    Get Started
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Performance Marketing Network
+                    </div>
+
+                    <h1>
+                        Scale your
+                        <span class="gradient">performance</span>
+                        with smarter advertising.
+                    </h1>
+
+                    <p class="hero-text">
+                        Ads Pheonix connects advertisers with quality
+                        publishers and scalable digital traffic through a
+                        performance-focused advertising platform.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="Advertiser/Register/index.html"
+                            class="btn btn-primary"
+                        >
+                            Start Advertising
+                        </a>
+
+                        <a
+                            href="Publisher/Register/index.html"
+                            class="btn btn-outline"
+                        >
+                            Become a Publisher
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        Built for performance campaigns, publishers and
+                        scalable user acquisition.
+                    </div>
+
+                </div>
+
+
+                <!-- Dashboard preview -->
+
+                <div class="hero-visual">
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-top">
+
+                            <div class="dashboard-title">
+                                Network Overview
+                            </div>
+
+                            <div class="live">
+                                <span class="live-dot"></span>
+                                LIVE
+                            </div>
+
+                        </div>
+
+                        <div class="stats-box">
+
+                            <div class="mini-stat">
+
+                                <div class="mini-stat-label">
+                                    Impressions
+                                </div>
+
+                                <div class="mini-stat-value">
+                                    2.84M
+                                </div>
+
+                            </div>
+
+                            <div class="mini-stat">
+
+                                <div class="mini-stat-label">
+                                    Clicks
+                                </div>
+
+                                <div class="mini-stat-value">
+                                    184K
+                                </div>
+
+                            </div>
+
+                            <div class="mini-stat">
+
+                                <div class="mini-stat-label">
+                                    Conversions
+                                </div>
+
+                                <div class="mini-stat-value">
+                                    12.8K
+                                </div>
+
+                            </div>
+
+                            <div class="mini-stat">
+
+                                <div class="mini-stat-label">
+                                    Revenue
+                                </div>
+
+                                <div class="mini-stat-value">
+                                    $48.6K
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-line">
+
+                                <svg
+                                    viewBox="0 0 500 140"
+                                    preserveAspectRatio="none"
+                                >
+
+                                    <path
+                                        class="chart-fill"
+                                        d="
+                                        M0,125
+                                        C45,112 65,118 100,94
+                                        C140,68 155,100 195,74
+                                        C235,48 260,77 300,54
+                                        C335,33 360,61 395,39
+                                        C435,15 460,33 500,10
+                                        L500,140
+                                        L0,140
+                                        Z
+                                        "
+                                    />
+
+                                    <path
+                                        d="
+                                        M0,125
+                                        C45,112 65,118 100,94
+                                        C140,68 155,100 195,74
+                                        C235,48 260,77 300,54
+                                        C335,33 360,61 395,39
+                                        C435,15 460,33 500,10
+                                        "
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <section class="stats-section">
+
+            <div class="stats-container">
+
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">GEOs & Markets</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Campaign Monitoring</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">Real-Time</div>
+                    <div class="stat-label">Tracking</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Publisher Network</div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ADVERTISERS / PUBLISHERS
+        ========================== -->
+
+        <section class="section" id="advertisers">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    One Platform
+                </div>
+
+                <h2 class="section-title">
+                    Built for both sides of performance marketing.
+                </h2>
+
+                <p class="section-description">
+                    Advertisers get scalable traffic while publishers
+                    monetize their audiences through performance campaigns.
+                </p>
+
+            </div>
+
+
+            <div class="audience-grid">
+
+                <div class="audience-card">
+
+                    <div class="audience-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        For Advertisers
+                    </h3>
+
+                    <p>
+                        Launch, manage and optimize performance campaigns
+                        while reaching relevant users through a scalable
+                        publisher ecosystem.
+                    </p>
+
+                    <ul class="audience-list">
+
+                        <li>
+                            Create and manage campaigns
+                        </li>
+
+                        <li>
+                            Track clicks and conversions
+                        </li>
+
+                        <li>
+                            Monitor campaign performance
+                        </li>
+
+                        <li>
+                            Configure tracking and postbacks
+                        </li>
+
+                    </ul>
+
+                    <br>
+
+                    <a
+                        href="Advertiser/Register/index.html"
+                        class="btn btn-primary"
+                    >
+                        Start Advertising
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="audience-card"
+                    id="publishers"
+                >
+
+                    <div class="audience-icon">
+                        ◇
+                    </div>
+
+                    <h3>
+                        For Publishers
+                    </h3>
+
+                    <p>
+                        Monetize your websites, applications and digital
+                        traffic with performance campaigns from advertisers.
+                    </p>
+
+                    <ul class="audience-list">
+
+                        <li>
+                            Add and manage websites
+                        </li>
+
+                        <li>
+                            Create advertising zones
+                        </li>
+
+                        <li>
+                            Track clicks and earnings
+                        </li>
+
+                        <li>
+                            Request publisher payouts
+                        </li>
+
+                    </ul>
+
+                    <br>
+
+                    <a
+                        href="Publisher/Register/index.html"
+                        class="btn btn-primary"
+                    >
+                        Become a Publisher
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section
+            class="section"
+            id="features"
+        >
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Platform
+                </div>
+
+                <h2 class="section-title">
+                    Everything you need to run performance campaigns.
+                </h2>
+
+                <p class="section-description">
+                    A centralized platform designed around tracking,
+                    transparency and performance.
+                </p>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ↗
+                    </div>
+
+                    <h3>
+                        Campaign Management
+                    </h3>
+
+                    <p>
+                        Create campaigns, configure targeting, define
+                        payouts and manage campaign status.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Real-Time Tracking
+                    </h3>
+
+                    <p>
+                        Monitor impressions, clicks, conversions and
+                        campaign performance from your dashboard.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        #
+                    </div>
+
+                    <h3>
+                        Conversion Tracking
+                    </h3>
+
+                    <p>
+                        Support postbacks and conversion events for
+                        measurable performance campaigns.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        $
+                    </div>
+
+                    <h3>
+                        Revenue Management
+                    </h3>
+
+                    <p>
+                        Keep track of advertiser balances, publisher
+                        earnings and payment activity.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Traffic Management
+                    </h3>
+
+                    <p>
+                        Organize traffic sources, campaigns, publishers
+                        and advertising inventory.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Fraud Control
+                    </h3>
+
+                    <p>
+                        Build safeguards for suspicious clicks,
+                        conversions and abnormal traffic patterns.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+
+        <section
+            class="section"
+            id="how-it-works"
+        >
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Simple Workflow
+                </div>
+
+                <h2 class="section-title">
+                    From campaign to conversion.
+                </h2>
+
+                <p class="section-description">
+                    Ads Pheonix is designed to keep the complete
+                    performance flow organized.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        STEP 01
+                    </div>
+
+                    <h3>
+                        Advertiser Creates Campaign
+                    </h3>
+
+                    <p>
+                        The advertiser defines the offer, targeting,
+                        payout, tracking and campaign requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        STEP 02
+                    </div>
+
+                    <h3>
+                        Publisher Gets Traffic
+                    </h3>
+
+                    <p>
+                        Approved publishers access available campaigns
+                        and place the appropriate advertising assets.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        STEP 03
+                    </div>
+
+                    <h3>
+                        Conversion Is Tracked
+                    </h3>
+
+                    <p>
+                        Clicks and conversion events are recorded and
+                        reflected in the relevant dashboards.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="cta">
+
+            <h2>
+                Ready to grow with Ads Pheonix?
+            </h2>
+
+            <p>
+                Join the performance network and build scalable
+                advertising partnerships.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="Advertiser/Register/index.html"
+                    class="btn btn-primary"
+                >
+                    Start Advertising
+                </a>
+
+                <a
+                    href="Publisher/Register/index.html"
+                    class="btn btn-outline"
+                >
+                    Join as Publisher
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">A</div>
+                        Ads <span>Pheonix</span>
+                    </a>
+
+                    <p>
+                        A performance-focused advertising platform
+                        connecting advertisers and publishers through
+                        scalable digital traffic.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Advertisers
+                    </h4>
+
+                    <a href="Advertiser/Login/index.html">
+                        Login
+                    </a>
+
+                    <a href="Advertiser/Register/index.html">
+                        Register
+                    </a>
+
+                    <a href="Advertiser/Campaigns/index.html">
+                        Campaigns
+                    </a>
+
+                    <a href="Advertiser/Reports/index.html">
+                        Reports
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Publishers
+                    </h4>
+
+                    <a href="Publisher/Login/index.html">
+                        Login
+                    </a>
+
+                    <a href="Publisher/Register/index.html">
+                        Register
+                    </a>
+
+                    <a href="Publisher/Websites/index.html">
+                        Websites
+                    </a>
+
+                    <a href="Publisher/Earnings/index.html">
+                        Earnings
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <div>
+                    © 2026 Ads Pheonix. All rights reserved.
+                </div>
+
+                <div>
+                    Performance Advertising Platform
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

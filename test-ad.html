@@ -1,0 +1,3 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Ad tag preview</title><style>body{font-family:Arial;background:#07111f;color:#fff;padding:30px}</style></head>
+<body><h2>Ad tag preview</h2><p>Use <code>?zone=ZONE_ID&amp;geo=US</code>. Reload to run a new auction.</p><div id="slot"></div>
+<script>var z=new URLSearchParams(location.search).get('zone');if(z){var s=document.createElement('script');s.src='/tag/'+encodeURIComponent(z)+'.js';document.getElementById('slot').appendChild(s)}</script></body></html>
