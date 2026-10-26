@@ -5,4 +5,4 @@ Disallow: /admin/
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://quicktoolbox292da.onrender.com/sitemap.xml
+Sitemap: https://quicktoolbox-dcak.onrender.com/sitemap.xml
