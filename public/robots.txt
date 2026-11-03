@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://quicktoolbox-dcak.onrender.com/sitemap.xml

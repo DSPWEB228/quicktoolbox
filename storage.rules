@@ -1,0 +1,28 @@
+rules_version = '2';
+
+// Deploy with: firebase deploy --only storage
+//
+// Ad creative images live under /adImages/{slotId}/{filename}.
+// Public read (they have to display on the live site), authenticated-only write.
+//
+// Note: Storage rules cannot look up Firestore's `admins` collection the way
+// firestore.rules does -- there's no cross-service lookup available here. That's
+// fine in this app because there is no public sign-up form anywhere on the site
+// or in /admin: the only way to get a Firebase Auth account is for you to create
+// it yourself in the Firebase console. So "signed in" and "is an admin" are the
+// same thing in practice. If you ever add self-serve sign-up, tighten this to
+// check a custom auth claim instead.
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /adImages/{slotId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null &&
+                      request.resource.size < 5 * 1024 * 1024 &&
+                      request.resource.contentType.matches('image/.*');
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

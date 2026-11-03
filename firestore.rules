@@ -1,0 +1,63 @@
+rules_version = '2';
+
+// Deploy with: firebase deploy --only firestore:rules
+//
+// Data model:
+//   admins/{uid}          - one doc per admin user (doc ID = their Firebase Auth UID).
+//                            Presence of the doc = they're allowed into /admin.
+//   adSlots/{slotId}      - top_banner | in_content | bottom_banner | sticky_anchor.
+//                            Public read (the site needs this to render), admin-only write.
+//   adImages/{autoId}     - metadata for every ad creative ever uploaded by the admin.
+//                            Admin-only read/write (it's your internal library, not public).
+//   events/{autoId}       - anonymous visitor analytics (page_view, tool_used,
+//                            ad_impression, ad_click, adblock_detected). Public CREATE
+//                            only — visitors can log an event but can never read, edit
+//                            or delete other events. Admin-only read.
+//   adminActions/{autoId} - audit log of admin actions (login, slot changes, uploads,
+//                            deletes). Written by the client only when the caller is a
+//                            verified admin; admin-only read.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null &&
+             exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /admins/{uid} {
+      allow read: if isAdmin();
+      allow write: if false; // manage this collection by hand in the Firebase console
+    }
+
+    match /adSlots/{slotId} {
+      // top_banner | in_content | bottom_banner | sticky_anchor | interstitial |
+      // in_feed_native | sidebar_rail
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /adImages/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    match /events/{docId} {
+      allow create: if request.resource.data.type in
+        ['page_view', 'tool_used', 'ad_impression', 'ad_click', 'adblock_detected'] &&
+        request.resource.data.page is string &&
+        request.resource.data.page.size() < 300;
+      allow read: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    match /adminActions/{docId} {
+      allow create: if isAdmin();
+      allow read: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    match /config/{docId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

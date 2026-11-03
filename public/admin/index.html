@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — QuickToolBox</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ===== Login screen ===== -->
+<div id="login-screen" class="login-screen">
+  <form id="login-form" class="login-card">
+    <div class="login-brand">Quick<span>ToolBox</span> <small>Admin</small></div>
+    <p id="login-error" class="login-error hidden"></p>
+    <label class="field-label" for="login-email">Email</label>
+    <input class="field-input" type="email" id="login-email" autocomplete="username" required>
+    <label class="field-label" for="login-password">Password</label>
+    <input class="field-input" type="password" id="login-password" autocomplete="current-password" required>
+    <button class="btn btn-primary" type="submit" id="login-btn">Sign in</button>
+    <p class="login-hint">Admin accounts are created in the Firebase console — there's no public sign-up here. See the README for setup steps.</p>
+  </form>
+</div>
+
+<!-- ===== Dashboard shell (hidden until authenticated) ===== -->
+<div id="dashboard" class="dash hidden">
+
+  <aside class="dash-sidebar">
+    <div class="dash-brand">Quick<span>ToolBox</span></div>
+    <nav class="dash-nav">
+      <button class="dash-nav-item active" data-tab="overview">Overview</button>
+      <button class="dash-nav-item" data-tab="slots">Ad Slots</button>
+      <button class="dash-nav-item" data-tab="images">Ad Image Library</button>
+      <button class="dash-nav-item" data-tab="activity">Activity Log</button>
+      <button class="dash-nav-item" data-tab="settings">Settings</button>
+    </nav>
+    <a class="dash-view-site" href="/" target="_blank">View live site ↗</a>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div id="dash-tab-title" class="dash-tab-title">Overview</div>
+      <div class="dash-user">
+        <span id="dash-user-email"></span>
+        <button id="logout-btn" class="btn btn-ghost">Log out</button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+
+      <!-- ---------- Overview ---------- -->
+      <section id="tab-overview" class="dash-panel">
+        <div class="stat-cards">
+          <div class="stat-card"><span class="stat-card__num" id="stat-views-today">—</span><span class="stat-card__label">Page views today</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-views-7d">—</span><span class="stat-card__label">Page views (7d)</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-views-30d">—</span><span class="stat-card__label">Page views (30d)</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-ad-impr">—</span><span class="stat-card__label">Ad impressions (30d)</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-ad-clicks">—</span><span class="stat-card__label">Ad clicks (30d)</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-ctr">—</span><span class="stat-card__label">Ad CTR (30d)</span></div>
+          <div class="stat-card"><span class="stat-card__num" id="stat-adblock-rate">—</span><span class="stat-card__label">Ad-block visits (30d)</span></div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="card">
+            <h3>Visits per day (last 14 days)</h3>
+            <div id="daily-chart" class="bar-chart"></div>
+          </div>
+          <div class="card">
+            <h3>Most visited pages (30d)</h3>
+            <div id="top-pages" class="simple-table-wrap"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Ad performance by placement (30d)</h3>
+          <div id="slot-breakdown" class="simple-table-wrap"></div>
+          <p class="muted small">Clicks only count for custom/self-served slots — AdSense doesn't expose ad clicks to publisher-side scripts, so AdSense slots always show "—" for clicks even though they're still earning.</p>
+        </div>
+        <p class="muted small">Counts are computed from recent anonymous events (page path + timestamp only — no personal data, no file contents).</p>
+      </section>
+
+      <!-- ---------- Ad Slots ---------- -->
+      <section id="tab-slots" class="dash-panel hidden">
+        <p class="muted">Three fixed in-page placements appear across the site: a leaderboard banner at the top, a rectangle mid-content and a leaderboard banner at the bottom. Each placement can run a real AdSense unit (paste its ad unit ID), a custom image ad you upload, or be switched off. A slot that is off, has no ad unit ID, or receives no ad from Google stays completely hidden, so visitors never see an empty box. About, Contact and Privacy pages never show ads.</p>
+        <div id="slots-container" class="slots-container"></div>
+      </section>
+
+      <!-- ---------- Ad Image Library ---------- -->
+      <section id="tab-images" class="dash-panel hidden">
+        <div class="panel-header-row">
+          <p class="muted">Every custom ad image you've uploaded, whether or not it's currently assigned to a slot.</p>
+          <button id="images-export" class="btn btn-ghost">Download CSV</button>
+        </div>
+        <div id="images-grid" class="images-grid"></div>
+        <p id="images-empty" class="muted small hidden">No custom ad images uploaded yet — upload one from the Ad Slots tab.</p>
+      </section>
+
+      <!-- ---------- Activity Log ---------- -->
+      <section id="tab-activity" class="dash-panel hidden">
+        <div class="activity-tabs">
+          <button class="activity-tab active" data-log="admin">Admin actions</button>
+          <button class="activity-tab" data-log="visitor">Visitor activity</button>
+        </div>
+
+        <div class="panel-header-row">
+          <select id="activity-filter" class="field-input field-input--inline">
+            <option value="">All types</option>
+          </select>
+          <div>
+            <button id="activity-load-more" class="btn btn-ghost">Load more</button>
+            <button id="activity-export" class="btn btn-ghost">Download CSV</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" id="activity-table">
+            <thead><tr></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p id="activity-empty" class="muted small hidden">No activity recorded yet.</p>
+      </section>
+
+      <!-- ---------- Settings ---------- -->
+      <section id="tab-settings" class="dash-panel hidden">
+        <div class="card">
+          <h3>AdSense</h3>
+          <p class="muted">Publisher ID in use across the whole site (in every page's <code>&lt;head&gt;</code> and in <code>/ads.txt</code>):</p>
+          <code class="code-line">ca-pub-5271137719829070</code>
+          <p class="muted">ads.txt content (must be served at <code>/ads.txt</code> — it already is):</p>
+          <code class="code-line">google.com, pub-5271137719829070, DIRECT, f08c47fec0942fa0</code>
+        </div>
+
+        <div class="card">
+          <h3>Go-live checklist</h3>
+          <div id="checklist"></div>
+        </div>
+
+        <div class="card">
+          <h3>Signed in as</h3>
+          <p id="settings-email" class="muted"></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

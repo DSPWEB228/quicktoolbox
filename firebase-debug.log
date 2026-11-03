@@ -1,0 +1,90 @@
+[debug] [2026-11-03T08:57:29.869Z] ----------------------------------------------------------------------
+[debug] [2026-11-03T08:57:29.874Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shiva\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-11-03T08:57:29.875Z] CLI Version:   15.34.2
+[debug] [2026-11-03T08:57:29.875Z] Platform:      win32
+[debug] [2026-11-03T08:57:29.876Z] Node Version:  v22.12.0
+[debug] [2026-11-03T08:57:29.876Z] Detected Agent: unknown
+[debug] [2026-11-03T08:57:29.876Z] Time:          Tue Nov 03 2026 14:27:29 GMT+0530 (India Standard Time)
+[debug] [2026-11-03T08:57:29.877Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-03T08:57:36.239Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-03T08:57:36.239Z] > authorizing via signed-in user (appsg3358@gmail.com)
+[debug] [2026-11-03T08:57:36.239Z] [iam] checking project quicktoolbox-292da for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-03T08:57:36.264Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:36.264Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:36.266Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/quicktoolbox-292da:testIamPermissions [none]
+[debug] [2026-11-03T08:57:36.267Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/quicktoolbox-292da:testIamPermissions  x-goog-user-project=quicktoolbox-292da
+[debug] [2026-11-03T08:57:36.267Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quicktoolbox-292da:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-03T08:57:38.999Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/quicktoolbox-292da:testIamPermissions 200
+[debug] [2026-11-03T08:57:39.000Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/quicktoolbox-292da:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-03T08:57:39.285Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:39.285Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:39.287Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/quicktoolbox-292da/services/firebasehosting.googleapis.com [none]
+[debug] [2026-11-03T08:57:39.288Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/quicktoolbox-292da/services/firebasehosting.googleapis.com  x-goog-user-project=quicktoolbox-292da
+[debug] [2026-11-03T08:57:41.768Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/quicktoolbox-292da/services/firebasehosting.googleapis.com 200
+[debug] [2026-11-03T08:57:41.769Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/quicktoolbox-292da/services/firebasehosting.googleapis.com [omitted]
+[debug] [2026-11-03T08:57:41.785Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:41.786Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:41.786Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quicktoolbox-292da [none]
+[debug] [2026-11-03T08:57:43.056Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quicktoolbox-292da 200
+[debug] [2026-11-03T08:57:43.057Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quicktoolbox-292da {"projectId":"quicktoolbox-292da","projectNumber":"563835016406","displayName":"QuickToolBox","name":"projects/quicktoolbox-292da","resources":{"hostingSite":"quicktoolbox-292da"},"state":"ACTIVE","labels":{"firebase":"enabled","firebaseworkflows/environment":"unspecified"},"etag":"1_c8e80157-0d77-486d-9357-b231355dd8cd"}
+[info] 
+[info] === Deploying to 'quicktoolbox-292da'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-11-03T08:57:43.074Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:43.074Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:43.074Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) [none]
+[debug] [2026-11-03T08:57:45.011Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) 200
+[debug] [2026-11-03T08:57:45.012Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) {"name":"projects/quicktoolbox-292da/databases/(default)","uid":"8c29c88c-fd24-4d5e-be21-0dd52bdfbe5d","createTime":"2026-09-14T21:47:35.368886Z","updateTime":"2026-09-14T21:47:35.368886Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-11-03T07:57:44.870367Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IMGtz6W365cDMMXtrdbS4pcD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-11-03T08:57:45.021Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:45.021Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:45.021Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da:test [none]
+[debug] [2026-11-03T08:57:45.021Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da:test [omitted]
+[debug] [2026-11-03T08:57:45.427Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da:test 200
+[debug] [2026-11-03T08:57:45.428Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-11-03T08:57:45.433Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:45.434Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:45.434Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da [none]
+[debug] [2026-11-03T08:57:46.771Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da 200
+[debug] [2026-11-03T08:57:46.771Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da {"name":"projects/quicktoolbox-292da/sites/quicktoolbox-292da","defaultUrl":"https://quicktoolbox-292da.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-11-03T08:57:46.776Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:46.776Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:46.776Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da/versions [none]
+[debug] [2026-11-03T08:57:46.777Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-03T08:57:47.772Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da/versions 200
+[debug] [2026-11-03T08:57:47.772Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/quicktoolbox-292da/sites/quicktoolbox-292da/versions {"name":"projects/quicktoolbox-292da/sites/quicktoolbox-292da/versions/f97ef1c45862d99a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-03T08:57:47.775Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:47.775Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:47.776Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/releases pageSize=10&pageToken=
+[debug] [2026-11-03T08:57:49.206Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/releases 200
+[debug] [2026-11-03T08:57:49.207Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/releases {"releases":[{"name":"projects/quicktoolbox-292da/releases/cloud.firestore","rulesetName":"projects/quicktoolbox-292da/rulesets/3791387d-1a49-4a6f-b092-160d21f8c5ee","createTime":"2026-09-14T21:47:41.020858Z","updateTime":"2026-10-16T12:54:38.354853Z"}]}
+[debug] [2026-11-03T08:57:49.207Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:49.207Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:49.207Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/rulesets/3791387d-1a49-4a6f-b092-160d21f8c5ee [none]
+[debug] [2026-11-03T08:57:50.643Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/rulesets/3791387d-1a49-4a6f-b092-160d21f8c5ee 200
+[debug] [2026-11-03T08:57:50.643Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/quicktoolbox-292da/rulesets/3791387d-1a49-4a6f-b092-160d21f8c5ee [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  firestore: deploying indexes... 
+[debug] [2026-11-03T08:57:50.652Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:50.652Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:50.652Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2026-11-03T08:57:52.572Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2026-11-03T08:57:52.573Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/indexes {"indexes":[{"name":"projects/quicktoolbox-292da/databases/(default)/collectionGroups/adminActions/indexes/CICAgJim14AK","queryScope":"COLLECTION","fields":[{"fieldPath":"action","order":"ASCENDING"},{"fieldPath":"ts","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/quicktoolbox-292da/databases/(default)/collectionGroups/events/indexes/CICAgOjXh4EK","queryScope":"COLLECTION","fields":[{"fieldPath":"type","order":"ASCENDING"},{"fieldPath":"ts","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/quicktoolbox-292da/databases/(default)/collectionGroups/events/indexes/CICAgJiUpoMK","queryScope":"COLLECTION","fields":[{"fieldPath":"ts","order":"ASCENDING"},{"fieldPath":"ts","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"}]}
+[debug] [2026-11-03T08:57:52.574Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:52.574Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:52.574Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2026-11-03T08:57:52.990Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2026-11-03T08:57:52.990Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/quicktoolbox-292da/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2026-11-03T08:57:52.991Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:52.991Z] Checked if tokens are valid: true, expires at: 1793699529079
+[debug] [2026-11-03T08:57:52.991Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) [none]
+[debug] [2026-11-03T08:57:53.405Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) 200
+[debug] [2026-11-03T08:57:53.406Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/quicktoolbox-292da/databases/(default) {"name":"projects/quicktoolbox-292da/databases/(default)","uid":"8c29c88c-fd24-4d5e-be21-0dd52bdfbe5d","createTime":"2026-09-14T21:47:35.368886Z","updateTime":"2026-09-14T21:47:35.368886Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-11-03T07:57:53.292890Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IJi30am365cDMMXtrdbS4pcD"}
+[info] i  firestore: The following indexes are defined in your project but are not present in your firestore indexes file:
+	(events) -- (ts,ASCENDING) (ts,DESCENDING)  -- Density:SPARSE_ALL  
